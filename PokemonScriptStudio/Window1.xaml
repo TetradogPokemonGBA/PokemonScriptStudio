@@ -31,7 +31,7 @@
 		<TabControl x:Name="tabMain"
 		            Grid.Row="1" SelectionChanged="TabControl_SelectionChanged">
 			<TabItem
-				Header="Script Actual"></TabItem>
+				Header="Script Abiertos"><TabControl x:Name="tabScriptsAbiertos"/></TabItem>
 			<TabItem
 				Header="Roms">
 				<Grid>

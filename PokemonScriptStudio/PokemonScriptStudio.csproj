@@ -101,6 +101,10 @@
       <Project>{52cf96db-a3aa-47d9-b0ba-7bb2834b68c7}</Project>
       <Name>PokemonGBAFrameWork</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\PokemonGBAFrameWork.Wpf\PokemonGBAFrameWork.Wpf\PokemonGBAFrameWork.Wpf.csproj">
+      <Project>{9c5981d9-9bab-4cf7-8f27-d05bc62868b8}</Project>
+      <Name>PokemonGBAFrameWork.Wpf</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

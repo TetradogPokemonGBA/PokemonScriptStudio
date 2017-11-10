@@ -19,6 +19,7 @@ using System.Windows.Media;
 using Gabriel.Cat;
 using PokemonGBAFrameWork;
 using Gabriel.Cat.Extension;
+using PokemonGBAFrameWork.Wpf;
 namespace PokemonScriptStudio
 {
 	/// <summary>
@@ -60,14 +61,14 @@ namespace PokemonScriptStudio
 						for (int i = 0; i < files.Count; i++) {
 							if(files[i].Extension.Contains(RomGba.EXTENSION))
 							{
-                                try
-                                {
-                                    romCargado = new VisualRom(files[i].FullName);
-                                    romCargado.Seleccionado += RomSeleccionado;
-                                    romCargado.DesSeleccionado += RomDesSeleccionado;
-                                    ugRoms.Children.Add(romCargado);
-                                }
-                                catch { }//si hay un problema al cargar la rom.gba podria ser que no fuera de pokemon, asi que la descarto
+								try
+								{
+									romCargado = new VisualRom(files[i].FullName);
+									romCargado.Seleccionado += RomSeleccionado;
+									romCargado.DesSeleccionado += RomDesSeleccionado;
+									ugRoms.Children.Add(romCargado);
+								}
+								catch { }//si hay un problema al cargar la rom.gba podria ser que no fuera de pokemon, asi que la descarto
 							}
 						}
 					}
@@ -93,20 +94,41 @@ namespace PokemonScriptStudio
 		void BtnDecopilarScript_Click(object sender, RoutedEventArgs e)
 		{
 			Script scriptACargar;
-			string scriptPath;
+
 			try {
 				scriptACargar = new Script(romSeleccionado.Rom, (int)(Hex)txtOffsetScript.Text);
 				//de momento guardo el script
-				scriptPath = System.IO.Path.Combine(configApp.txtRutaScripts.Text, romSeleccionado.txtNombreRom.Text + "." + txtOffsetScript.Text + ".script");
-				if (System.IO.File.Exists(scriptPath))
-					System.IO.File.Delete(scriptPath);
-				System.IO.File.WriteAllBytes(scriptPath, scriptACargar.GetDeclaracion(romSeleccionado.Rom));
-				MessageBox.Show("Script guardado satisfactoriamente!");
+				AñadirScript(scriptACargar,romSeleccionado.Rom.Nombre+"."+txtOffsetScript.Text);
 				
 			} catch {
 				MessageBox.Show("El offset no pertenece a ningun script bien formado!", "Atención", MessageBoxButton.OK, MessageBoxImage.Information);
 			}
 		}
+		public void AñadirScript(Script script=null,string nombreScript="nuevoScript")
+		{
+			ScriptViwer svScript;
+			TabItem tbScript;
+			tbScript=new TabItem();
+			tbScript.Header=nombreScript;
+			svScript=new ScriptViwer(script);
+			svScript.GuardarScript+=GuardarScript;
+			tbScript.Content=svScript;
+			tabScriptsAbiertos.Items.Add(tbScript);
+		}
+
+		void GuardarScript(object sender, EventArgs e)
+		{
+			ScriptViwer svScript=sender as ScriptViwer;
+			string scriptPath;
+			scriptPath = System.IO.Path.Combine(configApp.txtRutaScripts.Text, romSeleccionado.txtNombreRom.Text + "." + txtOffsetScript.Text + ".script");
+			if (System.IO.File.Exists(scriptPath))
+				System.IO.File.Delete(scriptPath);
+			//mirar los scripts anidados...creo que van a dar complicaciones.
+			System.IO.File.WriteAllBytes(scriptPath, svScript.Script.GetDeclaracion(romSeleccionado.Rom));
+			
+			MessageBox.Show("Script guardado satisfactoriamente!");
+		}
+
 		void ConfigApp_VolverAlMain(object sender, EventArgs e)
 		{
 			tabMain.Visibility=Visibility.Visible;
