@@ -1,14 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-# SharpDevelop 5.1
-VisualStudioVersion = 12.0.20827.3
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonScriptStudio", "PokemonScriptStudio\PokemonScriptStudio.csproj", "{D80783D0-EEA1-4BBB-9738-1B6BBA48E075}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonGBAFrameWork", "..\..\..\Desktop\Mis Programas\PokemonGBAFrameWork\PokemonGBAFrameWork\PokemonGBAFrameWork.csproj", "{52CF96DB-A3AA-47D9-B0BA-7BB2834B68C7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonGBAFrameWork.Wpf", "..\PokemonGBAFrameWork.Wpf\PokemonGBAFrameWork.Wpf\PokemonGBAFrameWork.Wpf.csproj", "{9C5981D9-9BAB-4CF7-8F27-D05BC62868B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonGBAFrameWork", "..\..\..\Desktop\Mis Programas\PokemonGBAFrameWork\PokemonGBAFrameWork\PokemonGBAFrameWork.csproj", "{52CF96DB-A3AA-47D9-B0BA-7BB2834B68C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,13 +19,16 @@ Global
 		{D80783D0-EEA1-4BBB-9738-1B6BBA48E075}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D80783D0-EEA1-4BBB-9738-1B6BBA48E075}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D80783D0-EEA1-4BBB-9738-1B6BBA48E075}.Release|Any CPU.Build.0 = Release|Any CPU
-		{52CF96DB-A3AA-47D9-B0BA-7BB2834B68C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52CF96DB-A3AA-47D9-B0BA-7BB2834B68C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52CF96DB-A3AA-47D9-B0BA-7BB2834B68C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52CF96DB-A3AA-47D9-B0BA-7BB2834B68C7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9C5981D9-9BAB-4CF7-8F27-D05BC62868B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9C5981D9-9BAB-4CF7-8F27-D05BC62868B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C5981D9-9BAB-4CF7-8F27-D05BC62868B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C5981D9-9BAB-4CF7-8F27-D05BC62868B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52CF96DB-A3AA-47D9-B0BA-7BB2834B68C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52CF96DB-A3AA-47D9-B0BA-7BB2834B68C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52CF96DB-A3AA-47D9-B0BA-7BB2834B68C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52CF96DB-A3AA-47D9-B0BA-7BB2834B68C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
